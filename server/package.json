@@ -1,0 +1,19 @@
+{
+  "name": "get-fit",
+  "version": "1.0.0",
+  "description": "Fitness tracker application.",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaserhdev/get-fit.git"
+  },
+  "author": "Tyler Clark, Raja Hussain, Austin Luper, Josh Mayfield",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yaserhdev/get-fit/issues"
+  },
+  "homepage": "https://github.com/yaserhdev/get-fit#readme"
+}
