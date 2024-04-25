@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({ username: '', email: '', password: '' });

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { getPastWorkouts } from '../services/workoutService'; // Assuming you have a service to fetch workout data
+import { useState, useEffect } from 'react';
+import { getPastWorkouts } from '../components/Workouts.jsx'; // Assuming you have a service to fetch workout data
 
 const Profile = () => {
   const [pastWorkouts, setPastWorkouts] = useState([]);
