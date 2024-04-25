@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 // define Exercise schema
 
 const exerciseSchema = new Schema({
-    name: {
+      name: {
         type: String,
         required: true,
       },
@@ -15,7 +15,16 @@ const exerciseSchema = new Schema({
         type: String,
         required: true,
       },
-})
+      sets: {
+        type: Number,
+      },
+      reps: {
+        type: Number,
+      },
+      weight: {
+        type: Number,
+      },
+});
 
 // Create Exercise model
 const Exercise = model('Exercise', exerciseSchema);
