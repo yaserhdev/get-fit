@@ -3,7 +3,11 @@ const { Schema, model } = require('mongoose');
 // define Exercise schema
 
 const exerciseSchema = new Schema({
-      name: {
+      exercise_name: {
+        type: String,
+        required: true,
+      },
+      exercise_author: {
         type: String,
         required: true,
       },
