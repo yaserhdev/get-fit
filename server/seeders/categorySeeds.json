@@ -1,17 +1,17 @@
 [
     {
-        "exerciseCategory": "Chest"
+        "name": "Chest"
     },
     {
-        "exerciseCategory": "Shoulders"
+        "name": "Shoulders"
     },
     {
-        "exerciseCategory": "Back"
+        "name": "Back"
     },
     {
-        "exerciseCategory": "Arms"
+        "name": "Arms"
     },
     {
-        "exerciseCategory": "Legs"
+        "name": "Legs"
     }
 ]

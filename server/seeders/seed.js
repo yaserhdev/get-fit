@@ -10,9 +10,9 @@ db.once('open', async () => {
         await cleanDB('Category', 'categories');
         await Category.create(categorySeeds);
         for (let i = 0; i < exerciseSeeds.length; i++) {
-            const { _id, exerciseCategory } = await Exercise.create(exerciseSeeds[i]);
+            const { _id, name } = await Exercise.create(exerciseSeeds[i]);
             const category = await Category.findOneAndUpdate(
-                { name: exerciseCategory },
+                { name: name },
                 {
                     $addToSet: {
                         exercises: _id,
