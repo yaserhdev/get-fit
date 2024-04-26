@@ -67,6 +67,7 @@ Express.js
 ## Credits
 Development was assisted by the following resources:
  - Xpert Learning Assistant provided by the GWU Coding Boot Camp. Provided general guidance and assistance with Installation
+ - Documentation and CDN link for normalize.css (https://github.com/necolas/normalize.css)
 
 
 ## Contact
