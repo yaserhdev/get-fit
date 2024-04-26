@@ -12,7 +12,7 @@ db.once('open', async () => {
         for (let i = 0; i < exerciseSeeds.length; i++) {
             const { _id, exerciseCategory } = await Exercise.create(exerciseSeeds[i]);
             const category = await Category.findOneAndUpdate(
-                { category: exerciseCategory },
+                { name: exerciseCategory },
                 {
                     $addToSet: {
                         exercises: _id,
