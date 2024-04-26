@@ -1,0 +1,152 @@
+[
+    {
+        "name": "Bench Press",
+        "category": "Chest",
+        "description": "" 
+    },
+    {
+        "name": "Push-Ups",
+        "category": "Chest",
+        "description": "" 
+    },
+    {
+        "name": "Chest Flyes",
+        "category": "Chest",
+        "description": "" 
+    },
+    {
+        "name": "Shoulder Press",
+        "category": "Shoulders",
+        "description": "" 
+    },
+    {
+        "name": "Arnold Press",
+        "category": "Shoulders",
+        "description": "" 
+    },
+    {
+        "name": "Front Raises",
+        "category": "Shoulders",
+        "description": "" 
+    },
+    {
+        "name": "Lateral Raises",
+        "category": "Shoulders",
+        "description": "" 
+    },
+    {
+        "name": "Reverse Flyes",
+        "category": "Shoulders",
+        "description": "" 
+    },
+    {
+        "name": "Lat Pull-Down",
+        "category": "Back",
+        "description": "" 
+    },
+    {
+        "name": "Pull-Ups",
+        "category": "Back",
+        "description": "" 
+    },
+    {
+        "name": "Row",
+        "category": "Back",
+        "description": "" 
+    },
+    {
+        "name": "Inverted Row",
+        "category": "Back",
+        "description": "" 
+    },
+    {
+        "name": "Rack Pull",
+        "category": "Back",
+        "description": "" 
+    },
+    {
+        "name": "Lat Pull-Over",
+        "category": "Back",
+        "description": "" 
+    },
+    {
+        "name": "Dips",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Close-Grip Bench Press",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Tricep Extensions",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Tricep Push-Down",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Tricep Kick-Back",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Barbell Curl",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Spider Curls",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Drag Curls",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Preacher Curls",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Incline Curls",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Concentration Curls",
+        "category": "Arms",
+        "description": "" 
+    },
+    {
+        "name": "Squat",
+        "category": "Legs",
+        "description": "" 
+    },
+    {
+        "name": "Deadlift",
+        "category": "Legs",
+        "description": "" 
+    },
+    {
+        "name": "Leg Extentions",
+        "category": "Legs",
+        "description": "" 
+    },
+    {
+        "name": "Leg Curls",
+        "category": "Legs",
+        "description": "" 
+    },
+    {
+        "name": "Calf Raises",
+        "category": "Legs",
+        "description": "" 
+    }
+]
