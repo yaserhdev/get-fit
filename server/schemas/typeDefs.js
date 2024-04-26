@@ -23,6 +23,17 @@ const typeDefs = `
     user: User
   }
 
+  input LoginInput {
+    email: String!
+    password: String!
+  }
+
+  input SignupInput {
+    username: String!
+    email: String!
+    password: String!
+  }
+
   type Query {
     users: [User]
     user(username: String!): User
@@ -31,6 +42,8 @@ const typeDefs = `
   }
 
   type Mutation {
+    login(input: LoginInput!): Auth
+    signup(input: SignupInput!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addExercise(exercise_name: String!, category: String!, description: String!, sets: Int!, reps: Int!, weight: Int!): Exercise
