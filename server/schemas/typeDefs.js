@@ -37,7 +37,7 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    exercise(username: String): [Exercise]
+    workouts(username: String): [Workout]
     me: User
   }
 
