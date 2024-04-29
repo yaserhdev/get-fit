@@ -1,21 +1,20 @@
 const typeDefs = `
   type User {
     _id: ID
-    username: String
-    email: String
-    password: String
+    username: String!
+    email: String!
+    password: String!
     exercises: [Exercise]!
   }
 
   type Exercise {
     _id: ID
-    exercise_name: String
-    exercise_author: String
+    exercise_name: String!
     category: String
     description: String
-    sets: Int
-    reps: Int
-    weight: Int
+    sets: Int!
+    reps: Int!
+    weight: Int!
   }
 
   type Workout {
@@ -42,7 +41,7 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     signup(username: String!, email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addExercise(exercise_name: String!, category: String!, description: String!, sets: Int!, reps: Int!, weight: Int!): Exercise
+    addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!): Exercise
     removeExercise(exerciseId: ID!): Exercise
   }
 `
