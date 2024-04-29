@@ -14,9 +14,6 @@ const Navbar = () => {
                 <li>
                     <Link to="/workouts">Workouts</Link>
                 </li>
-                <li>
-                    <Link to="/settings">Settings</Link>
-                </li>
                 {/* Add more navigation links as needed */}
             </ul>
         </nav>
