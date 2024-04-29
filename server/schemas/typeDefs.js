@@ -18,20 +18,17 @@ const typeDefs = `
     weight: Int
   }
 
+  type Workout {
+    exercises: [Exercise]!
+  }
+
+  type Category {
+    name: String
+  }
+
   type Auth {
     token: ID!
     user: User
-  }
-
-  input LoginInput {
-    email: String!
-    password: String!
-  }
-
-  input SignupInput {
-    username: String!
-    email: String!
-    password: String!
   }
 
   type Query {
@@ -42,10 +39,9 @@ const typeDefs = `
   }
 
   type Mutation {
-    login(input: LoginInput!): Auth
-    signup(input: SignupInput!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    signup(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     addExercise(exercise_name: String!, category: String!, description: String!, sets: Int!, reps: Int!, weight: Int!): Exercise
     removeExercise(exerciseId: ID!): Exercise
   }
