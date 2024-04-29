@@ -1,4 +1,4 @@
-const { User, Exercise } = require('../models');
+const { User, Workout } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -9,9 +9,9 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('exercises');
     },
-    exercises: async (parent, { username }) => {
+    workouts: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Exercise.find(params);
+      return Workout.find(params);
     },
     me: async (parent, args, context) => {
       if (context.user) {
