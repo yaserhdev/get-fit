@@ -1,12 +1,21 @@
-import { useState } from 'react';
 import './App.css';
-import Home from './pages/Home';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { Outlet } from 'react-router-dom';
 
+import Footer from './components/Footer';
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 function App() {
-
   return (
-    <Home />
+    <ApolloProvider client={client}>
+    <Outlet />
+      <Footer />
+    </ApolloProvider>
   )
+ 
 }
 
 export default App
