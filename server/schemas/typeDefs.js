@@ -40,8 +40,11 @@ const typeDefs = `
   type Mutation {
     login(email: String!, password: String!): Auth
     signUp(username: String!, email: String!, password: String!): Auth
+    updateUserProfile(username: String!, email: String!): User
     addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!): Exercise
-    removeExercise(exerciseId: ID!): Exercise
+    removeExerciseFromWorkout(workoutId: ID!, exerciseId: ID!): Exercise
+    addWorkout(day: String, workout_type: String, exercises: [Exercise]): Workout
+    removeWorkout(workoutId: ID!): Workout
   }
 `
 
