@@ -25,3 +25,51 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const UPDATE_USER_PROFILE = gql`
+  mutation UpdateUserProfile($username: String!, $email: String!) {
+    updateUserProfile(username: $username, email: $email) {
+      _id
+      username
+      email
+    }
+  }
+`;
+
+export const ADD_EXERCISE = gql`
+  mutation AddExercise($exerciseInput: ExerciseInput!) {
+    addExercise(exerciseInput: $exerciseInput) {
+      _id
+      exercise_name
+      category
+      description
+      sets
+      reps
+      weight
+    }
+  }
+`;
+
+export const REMOVE_WORKOUT = gql`
+  mutation RemoveWorkout($workoutId: ID!) {
+    removeWorkout(workoutId: $workoutId) {
+      _id
+    }
+  }
+`;
+
+export const ADD_CARDIO_TO_WORKOUT = gql`
+  mutation AddCardioToWorkout($workoutId: ID!, $cardioInput: CardioInput!) {
+    addCardioToWorkout(workoutId: $workoutId, cardioInput: $cardioInput) {
+      _id
+      cardioType
+      duration
+    }
+  }
+`;
+
+export const REMOVE_CARDIO_FROM_WORKOUT = gql`
+  mutation RemoveCardioFromWorkout($workoutId: ID!, $cardioId: ID!) {
+    removeCardioFromWorkout(workoutId: $workoutId, cardioId: $cardioId)
+  }
+`;
