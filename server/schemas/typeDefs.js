@@ -41,8 +41,8 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     signUp(username: String!, email: String!, password: String!): Auth
     updateUserProfile(username: String!, email: String!): User
-    addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!): Exercise
-    removeExerciseFromWorkout(workoutId: ID!, exerciseId: ID!): Exercise
+    addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!, workout_id: [Workout]): Exercise
+    removeExercise(exerciseId: ID!): Exercise
     addWorkout(day: String, workout_type: String, exercises: [Exercise]): Workout
     removeWorkout(workoutId: ID!): Workout
   }
