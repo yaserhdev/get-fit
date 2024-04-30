@@ -30,16 +30,48 @@ const SignUpPage = () => {
       console.error(err);
       setShowAlert(true);
     }
+    setSignUpData({
+      username: '',
+      email: '',
+      password: '',
+    });
   };
 
   return (
     <div>
       <h2>Sign Up</h2>
       <form validated={validated} onSubmit={handleSignUpSubmit}>
-        <input type="text" name="username" placeholder="Username" value={signUpData.username} onChange={handleSignUpChange} required />
-        <input type="email" name="email" placeholder="Email" value={signUpData.email} onChange={handleSignUpChange} required />
-        <input type="password" name="password" placeholder="Password" value={signUpData.password} onChange={handleSignUpChange} required />
-        <button disabled={!(signUpData.username && signUpData.email && signUpData.password)} type="submit" variant="success">Sign Up</button>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={signUpData.username}
+          onChange={handleSignUpChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={signUpData.email}
+          onChange={handleSignUpChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={signUpData.password}
+          onChange={handleSignUpChange}
+          required
+        />
+        <button
+          disabled={!(signUpData.username && signUpData.email && signUpData.password)}
+          type="submit"
+          variant="success"
+        >
+          Sign Up
+        </button>
       </form>
     </div>
   );
