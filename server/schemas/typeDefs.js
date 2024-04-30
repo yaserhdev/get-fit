@@ -4,7 +4,7 @@ const typeDefs = `
     username: String
     email: String
     password: String
-    exercises: [Exercise]!
+    workouts: [Workout]!
   }
 
   type Exercise {
@@ -40,8 +40,7 @@ const typeDefs = `
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    signup(username: String!, email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
+    signUp(username: String!, email: String!, password: String!): Auth
     addExercise(exercise_name: String!, category: String!, description: String!, sets: Int!, reps: Int!, weight: Int!): Exercise
     removeExercise(exerciseId: ID!): Exercise
   }
