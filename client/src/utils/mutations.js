@@ -50,6 +50,44 @@ export const ADD_EXERCISE = gql`
   }
 `;
 
+export const REMOVE_EXERCISE_FROM_WORKOUT = gql`
+  mutation RemoveExerciseFromWorkout($workoutId: ID!, $exerciseId: ID!) {
+    removeExerciseFromWorkout(workoutId: $workoutId, exerciseId: $exerciseId) {
+      _id
+      day
+      workoutType
+      exercises {
+        _id
+        exercise_name
+        category
+        description
+        sets
+        reps
+        weight
+      }
+    }
+  }
+`;
+
+export const ADD_WORKOUT = gql`
+  mutation AddWorkout($workoutInput: WorkoutInput!) {
+    addWorkout(workoutInput: $workoutInput) {
+      _id
+      day
+      workoutType
+      exercises {
+        _id
+        exercise_name
+        category
+        description
+        sets
+        reps
+        weight
+      }
+    }
+  }
+`;
+
 export const REMOVE_WORKOUT = gql`
   mutation RemoveWorkout($workoutId: ID!) {
     removeWorkout(workoutId: $workoutId) {
