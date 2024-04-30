@@ -1,13 +1,20 @@
 import { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
-import Auth from '../utils/auth';
+import styled from 'styled-components';
+
+// Styled component for the sign-up container
+const SignUpContainer = styled.div`
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  background-color: #fff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+`;
 
 const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({ username: '', email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [signUp] = useMutation(ADD_USER);
 
   const handleSignUpChange = (event) => {
     const { name, value } = event.target;
@@ -38,7 +45,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div>
+    <SignUpContainer>
       <h2>Sign Up</h2>
       <form validated={validated} onSubmit={handleSignUpSubmit}>
         <input
@@ -73,7 +80,7 @@ const SignUpPage = () => {
           Sign Up
         </button>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 
