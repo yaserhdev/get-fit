@@ -14,8 +14,12 @@
     "url": "git+https://github.com/yaserhdev/get-fit.git"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.14",
+    "graphql": "^16.6.0",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
