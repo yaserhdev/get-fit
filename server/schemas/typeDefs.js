@@ -9,13 +9,12 @@ const typeDefs = `
 
   type Exercise {
     _id: ID
-    exercise_name: String
-    exercise_author: String
+    exercise_name: String!
     category: String
     description: String
-    sets: Int
-    reps: Int
-    weight: Int
+    sets: Int!
+    reps: Int!
+    weight: Int!
   }
 
   type Workout {
@@ -41,7 +40,7 @@ const typeDefs = `
   type Mutation {
     login(email: String!, password: String!): Auth
     signUp(username: String!, email: String!, password: String!): Auth
-    addExercise(exercise_name: String!, category: String!, description: String!, sets: Int!, reps: Int!, weight: Int!): Exercise
+    addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!): Exercise
     removeExercise(exerciseId: ID!): Exercise
   }
 `
