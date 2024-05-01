@@ -48,9 +48,9 @@ export const ADD_EXERCISE = gql`
   }
 `;
 
-export const REMOVE_EXERCISE_FROM_WORKOUT = gql`
-  mutation RemoveExerciseFromWorkout($workoutId: ID!, $exerciseId: ID!) {
-    removeExerciseFromWorkout(workoutId: $workoutId, exerciseId: $exerciseId) {
+export const REMOVE_EXERCISE = gql`
+  mutation removeExercise($workoutId: ID!, $exerciseId: ID!) {
+    removeExercise(workoutId: $workoutId, exerciseId: $exerciseId) {
       _id
       day
       workoutType

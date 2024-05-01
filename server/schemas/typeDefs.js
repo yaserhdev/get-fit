@@ -30,6 +30,16 @@ const typeDefs = `
     user: User
   }
 
+  input ExerciseInput {
+    _id: ID
+    exercise_name: String!
+    category: String
+    description: String
+    sets: Int!
+    reps: Int!
+    weight: Int!
+  }
+
   type Query {
     users: [User]
     user(username: String!): User
@@ -39,11 +49,11 @@ const typeDefs = `
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    signUp(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     updateUserProfile(username: String!, email: String!): User
-    addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!): Exercise
-    removeExerciseFromWorkout(workoutId: ID!, exerciseId: ID!): Exercise
-    addWorkout(day: String, workout_type: String, exercises: [Exercise]): Workout
+    addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!, workout_id: ID!): Exercise
+    removeExercise(exerciseId: ID!): Exercise
+    addWorkout(day: String, workout_type: String, exercises: ExerciseInput): Workout
     removeWorkout(workoutId: ID!): Workout
   }
 `

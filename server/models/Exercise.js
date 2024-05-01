@@ -24,6 +24,12 @@ const exerciseSchema = new Schema({
       weight: {
         type: Number,
       },
+      workout_id: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Workout',
+        },
+      ],
 });
 
 // Create Exercise model

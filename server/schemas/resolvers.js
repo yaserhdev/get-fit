@@ -1,4 +1,4 @@
-const { User, Workout } = require('../models');
+const { User, Workout, Exercise } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -22,7 +22,7 @@ const resolvers = {
   },
 
   Mutation: {
-    signUp: async (parent, { username, email, password }) => {
+    addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
