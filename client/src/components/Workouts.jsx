@@ -5,8 +5,7 @@ const Workouts = () => {
     day: '', // Day of the week
     workoutType: '', // Type of workout (e.g., chest, arms, legs, etc.)
     exercises: [], // Array of exercises performed
-    cardioType: '', // Type of cardio performed
-  });
+     });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
