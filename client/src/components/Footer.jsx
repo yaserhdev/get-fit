@@ -1,8 +1,9 @@
 import Navbar from './Navbar';
 
 
-const App = () => {
+const Footer = () => {
     return (
+        
         <div>
             <Navbar />
             {/* <Footer /> */}
@@ -10,4 +11,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Footer;
