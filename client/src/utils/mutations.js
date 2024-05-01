@@ -93,19 +93,3 @@ export const REMOVE_WORKOUT = gql`
     }
   }
 `;
-
-export const ADD_CARDIO_TO_WORKOUT = gql`
-  mutation AddCardioToWorkout($workoutId: ID!, $cardioInput: CardioInput!) {
-    addCardioToWorkout(workoutId: $workoutId, cardioInput: $cardioInput) {
-      _id
-      cardioType
-      duration
-    }
-  }
-`;
-
-export const REMOVE_CARDIO_FROM_WORKOUT = gql`
-  mutation RemoveCardioFromWorkout($workoutId: ID!, $cardioId: ID!) {
-    removeCardioFromWorkout(workoutId: $workoutId, cardioId: $cardioId)
-  }
-`;
