@@ -1,12 +1,11 @@
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from './Navbar';
 
 
 const App = () => {
     return (
         <div>
             <Navbar />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

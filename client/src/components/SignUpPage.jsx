@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 import styled from 'styled-components';
+import Auth from '../utils/auth';
 
 // Styled component for the sign-up container
 const SignUpContainer = styled.div`
@@ -13,8 +16,9 @@ const SignUpContainer = styled.div`
 
 const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({ username: '', email: '', password: '' });
-  const [validated] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
+  // const [validated] = useState(false);
+  // const [showAlert, setShowAlert] = useState(false);
+  const [addUser] = useMutation(ADD_USER);
 
   const handleSignUpChange = (event) => {
     const { name, value } = event.target;
@@ -31,11 +35,11 @@ const SignUpPage = () => {
     }
     alert(signUpData.username);
     try {
-      const { data } = await signUp({ variables: signUpData });
-      Auth.login(data.signUp.token);
+      const { data } = await addUser({ variables: signUpData });
+      Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
-      setShowAlert(true);
+      // setShowAlert(true);
     }
     setSignUpData({
       username: '',
@@ -47,7 +51,8 @@ const SignUpPage = () => {
   return (
     <SignUpContainer>
       <h2>Sign Up</h2>
-      <form validated={validated} onSubmit={handleSignUpSubmit}>
+      {/* <form validated={validated} onSubmit={handleSignUpSubmit}> */}
+      <form onSubmit={handleSignUpSubmit}>
         <input
           type="text"
           name="username"
