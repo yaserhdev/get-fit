@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
-import Workouts from '../components/Workouts.jsx'; // Assuming you have a service to fetch workout data
+import Workouts from '../components/Workouts.jsx';
+import Navbar from '../components/Navbar.jsx'; // Import the Navbar component
 
 const Profile = () => { 
   const [pastWorkouts, setPastWorkouts] = useState([]);
 
   useEffect(() => {
-    // Fetch past workouts data when the component mounts
     const fetchData = async () => {
       try {
-        const data = await Workouts(); // Fetch data from your backend API
+        const data = await Workouts();
         setPastWorkouts(data);
       } catch (error) {
         console.error('Error fetching past workouts:', error);
@@ -20,6 +20,7 @@ const Profile = () => {
 
   return (
     <div>
+      <Navbar /> {/* Include the Navbar component */}
       <h1>Profile Page</h1>
       <h2>Past Workouts</h2>
       <ul>
