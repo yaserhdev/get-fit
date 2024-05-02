@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 // define Exercise schema
 
 const exerciseSchema = new Schema({
-      name: {
+      exercise_name: {
         type: String,
         required: true,
       },
@@ -24,12 +24,6 @@ const exerciseSchema = new Schema({
       weight: {
         type: Number,
       },
-      workout_id: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: 'Workout',
-        },
-      ],
 });
 
 // Create Exercise model

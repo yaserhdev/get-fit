@@ -1,3 +1,4 @@
+const { DataTypes } = require('sequelize');
 const { User, Workout, Exercise } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
@@ -9,9 +10,10 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('exercises');
     },
-    workouts: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Workout.find(params);
+    // workouts: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    workouts: async (parent, { workoutId }) => {
+      return Workout.find().sort({ createdAt: -1 });
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -44,6 +46,37 @@ const resolvers = {
 
       return { token, user };
     },
+    // addWorkout: async (parent, {
+    //   day,
+    //   workout_type,
+    //   exercises,
+    // }) => {
+    //   const newWorkout = await Workout.create({
+    //     day,
+    //     workout_type,
+    //     exercises
+    //   })
+    //   return { newWorkout };
+    // },
+
+    addWorkout: async (parent, { workout }, context) => {
+      if (context.user) {
+      //   const workout = await Workout.create({
+      //    day,
+      //    workout_type,
+      //    username: context.user.username,
+      //    exercises
+      //  });
+       const updatedUser = await User.findOneAndUpdate(
+         { _id: context.user._id },
+         { $push: { workouts: workout } },
+         { new: true }
+       );
+       return updatedUser;
+      }
+      throw AuthenticationError;
+    },
+
     addExercise: async (parent, { 
       exercise_name,
       category,

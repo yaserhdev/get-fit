@@ -68,7 +68,7 @@ export const REMOVE_EXERCISE = gql`
 `;
 
 export const ADD_WORKOUT = gql`
-  mutation AddWorkout($workoutInput: WorkoutInput!) {
+  mutation addWorkout($workoutInput: WorkoutInput!) {
     addWorkout(workoutInput: $workoutInput) {
       _id
       day
@@ -91,21 +91,5 @@ export const REMOVE_WORKOUT = gql`
     removeWorkout(workoutId: $workoutId) {
       _id
     }
-  }
-`;
-
-export const ADD_CARDIO_TO_WORKOUT = gql`
-  mutation AddCardioToWorkout($workoutId: ID!, $cardioInput: CardioInput!) {
-    addCardioToWorkout(workoutId: $workoutId, cardioInput: $cardioInput) {
-      _id
-      cardioType
-      duration
-    }
-  }
-`;
-
-export const REMOVE_CARDIO_FROM_WORKOUT = gql`
-  mutation RemoveCardioFromWorkout($workoutId: ID!, $cardioId: ID!) {
-    removeCardioFromWorkout(workoutId: $workoutId, cardioId: $cardioId)
   }
 `;
