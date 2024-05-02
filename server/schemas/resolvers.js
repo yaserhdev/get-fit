@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+// const { DataTypes } = require('sequelize');
 const { User, Workout, Exercise } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
