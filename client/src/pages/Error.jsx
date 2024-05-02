@@ -1,16 +1,46 @@
 import { useRouteError } from 'react-router-dom';
+import styled from 'styled-components';
+
+// Define colors and styled components
+const colors = {
+  darkGreen: '#010400',
+  offWhite: '#FFFBFC',
+};
+
+const StyledErrorPage = styled.div`
+  background-color: ${colors.darkGreen}; /* Dark green background */
+  color: ${colors.offWhite}; /* Off-white text color */
+  text-align: center;
+  padding: 40px;
+`;
+
+const ErrorPageTitle = styled.h1`
+  font-size: 36px;
+`;
+
+const ErrorPageMessage = styled.p`
+  font-size: 18px;
+`;
 
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);
 
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
+    <StyledErrorPage>
+      <ErrorPageTitle>Oops!</ErrorPageTitle>
+      <ErrorPageMessage>Sorry, an unexpected error has occurred.</ErrorPageMessage>
+      <ErrorPageMessage>
         <i>{error.statusText || error.message}</i>
-      </p>
-    </div>
+      </ErrorPageMessage>
+      <ErrorPageMessage>
+        {/* Display message to reload the page */}
+        Please reload the page or contact support.
+      </ErrorPageMessage>
+    </StyledErrorPage>
   );
 }
