@@ -5,13 +5,19 @@ import App from './App.jsx';
 import Error from './pages/Error.jsx';
 import Home from './pages/Home.jsx';
 import Profile from './pages/Profile.jsx';
+import Footer from './components/Footer'; // Import the Footer component
 import Dashboard from './pages/Dashboard.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: (
+      <>
+        <App />
+        <Footer /> {/* Include the Footer component */}
+      </>
+    ),
     errorElement: <Error />,
     children: [
       {
@@ -35,8 +41,5 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
   <RouterProvider router={router} />
 )
