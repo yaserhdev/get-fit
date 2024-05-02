@@ -59,7 +59,7 @@ const AthleticBanner = styled(Banner)`
 // New styled component for the animated background section
 const AnimatedBackground = styled.div`
   position: relative;
-  height: 300px;
+  height: 400px; /* Increase height to reach the footer */
   background: linear-gradient(135deg, ${colors.lightBlue}, ${colors.lightCyan}); /* Gradient background */
   overflow: hidden;
 `;
@@ -67,10 +67,10 @@ const AnimatedBackground = styled.div`
 // New styled component for the content within the animated background section
 const ContentWrapper = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-  animation: ${fadeIn} 1.5s ease-in; /* Faster fade-in animation */
+  top: 40%; /* Adjust vertical position */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ${fadeIn} 1.5s ease-in;
   text-align: center;
   color: ${colors.offWhite};
 `;
