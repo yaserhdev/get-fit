@@ -4,7 +4,7 @@ const typeDefs = `
     username: String
     email: String
     password: String
-    workouts: [Workout]!
+    workouts: [Workout]
   }
 
   type Exercise {
@@ -18,7 +18,10 @@ const typeDefs = `
   }
 
   type Workout {
-    exercises: [Exercise]!
+    day: String!
+    workout_type: String!
+    username: String
+    exercises: [Exercise]
   }
 
   type Category {
@@ -30,8 +33,14 @@ const typeDefs = `
     user: User
   }
 
+  input WorkoutInput {
+    day: String 
+    workout_type: String
+    username: String
+    exercises: [ExerciseInput]
+  }
+
   input ExerciseInput {
-    _id: ID
     exercise_name: String!
     category: String
     description: String
@@ -53,7 +62,7 @@ const typeDefs = `
     updateUserProfile(username: String!, email: String!): User
     addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!, workout_id: ID!): Exercise
     removeExercise(exerciseId: ID!): Exercise
-    addWorkout(day: String, workout_type: String, exercises: ExerciseInput): Workout
+    addWorkout(workout: WorkoutInput): Workout
     removeWorkout(workoutId: ID!): Workout
   }
 `

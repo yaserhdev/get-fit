@@ -20,6 +20,24 @@ export const GET_USER_PROFILE = gql`
   }
 `;
 
+export const GET_WORKOUTS = gql`
+  query getWorkouts {
+    workouts {
+      _id
+      day
+      workout_type
+      exercises {
+        _id
+        exercise_name
+        category
+        sets
+        reps
+        weight
+      }
+    }
+  }
+`;
+
 // Mutation to update user profile information
 export const UPDATE_USER_PROFILE = gql`
   mutation UpdateUserProfile($username: String!, $email: String!) {
