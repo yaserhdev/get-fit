@@ -4,7 +4,6 @@ import styled from 'styled-components';
 // Define colors and styled components
 const colors = {
   darkGreen: '#010400',
-  lightBlue: '#25CFDC',
   offWhite: '#FFFBFC',
 };
 
@@ -23,14 +22,13 @@ const ErrorPageMessage = styled.p`
   font-size: 18px;
 `;
 
-const BlueLink = styled.a`
-  color: ${colors.lightBlue}; /* Use light blue color for link */
-  text-decoration: underline; /* Add underline to indicate it's a link */
-`;
-
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);
+
+  const reloadPage = () => {
+    window.location.reload();
+  };
 
   return (
     <StyledErrorPage>
@@ -40,8 +38,8 @@ export default function ErrorPage() {
         <i>{error.statusText || error.message}</i>
       </ErrorPageMessage>
       <ErrorPageMessage>
-        {/* Example of using blue color for a link */}
-        <BlueLink href="#">Go back to the homepage</BlueLink>
+        {/* Display message to reload the page */}
+        Please reload the page or contact support.
       </ErrorPageMessage>
     </StyledErrorPage>
   );
