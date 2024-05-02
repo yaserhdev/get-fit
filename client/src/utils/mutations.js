@@ -68,7 +68,7 @@ export const REMOVE_EXERCISE = gql`
 `;
 
 export const ADD_WORKOUT = gql`
-  mutation AddWorkout($workoutInput: WorkoutInput!) {
+  mutation addWorkout($workoutInput: WorkoutInput!) {
     addWorkout(workoutInput: $workoutInput) {
       _id
       day
