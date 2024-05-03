@@ -42,13 +42,10 @@ const Navbar = () => {
     <StyledNavbar>
       <StyledUl>
         <StyledLi>
-          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/">Dashboard</StyledLink>
         </StyledLi>
         <StyledLi>
           <StyledLink to="/profile">Profile</StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink to="/workouts">Workouts</StyledLink>
         </StyledLi>
       </StyledUl>
     </StyledNavbar>
