@@ -13,6 +13,9 @@ const StyledNavbar = styled.nav`
   padding: 20px 0; /* Add padding for spacing */
   background-color: ${colors.darkGreen}; /* Dark green background */
   text-align: center; /* Center align the links */
+  position: fixed; /* Position the navbar at the top of the viewport */
+  width: 100%; /* Make the navbar span the full width of the page */
+  top: 0; /* Position the navbar at the very top of the page */
 `;
 
 // Styled ul for the navbar links

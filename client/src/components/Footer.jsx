@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
@@ -5,7 +6,7 @@ const StyledFooter = styled.footer`
   color: #FFFBFC; /* Off-white text color */
   padding: 20px; /* Add padding for spacing */
   text-align: left; /* Align text to the left */
-  position: absolute; /* Position the footer at the bottom of the page */
+  position: fixed; /* Position the footer at the bottom of the viewport */
   width: 100%; /* Make the footer span the full width of the page */
   bottom: 0; /* Position the footer at the bottom of the viewport */
 `;
