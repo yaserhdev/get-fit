@@ -42,7 +42,7 @@ const Navbar = () => {
     <StyledNavbar>
       <StyledUl>
         <StyledLi>
-          <StyledLink to="/">Dashboard</StyledLink>
+          <StyledLink to="/dashboard">Dashboard</StyledLink>
         </StyledLi>
         <StyledLi>
           <StyledLink to="/profile">Profile</StyledLink>
