@@ -10,7 +10,6 @@ const StyledFooter = styled.footer`
   width: 100%; /* Make the footer span the full width of the page */
   bottom: 0; /* Position the footer at the bottom of the viewport */
 `;
-
 const FooterText = styled.p`
   font-family: Arial, sans-serif; /* Use a sans-serif font */
   font-size: 14px; /* Adjust font size */
@@ -20,7 +19,7 @@ const FooterText = styled.p`
 const Footer = () => {
   return (
     <StyledFooter>
-      <FooterText>© 2024 Get-Fit. All rights reserved.</FooterText>
+      <FooterText>© 2024 GET-FIT. All rights reserved.</FooterText>
     </StyledFooter>
   );
 };

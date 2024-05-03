@@ -4,28 +4,23 @@ const typeDefs = `
     username: String
     email: String
     password: String
-    workouts: [Workout]
+    workouts: [Workout]!
+  }
+
+  type Workout {
+    _id: ID
+    workoutName: String
+    workoutAuthor: String
+    createdAt: String
+    exercises: [Exercise]!
   }
 
   type Exercise {
     _id: ID
-    exercise_name: String!
-    category: String
-    description: String
-    sets: Int!
-    reps: Int!
-    weight: Int!
-  }
-
-  type Workout {
-    day: String!
-    workout_type: String!
-    username: String
-    exercises: [Exercise]
-  }
-
-  type Category {
-    name: String
+    exerciseName: String
+    sets: Int
+    reps: Int
+    weight: Int
   }
 
   type Auth {
@@ -33,38 +28,19 @@ const typeDefs = `
     user: User
   }
 
-  input WorkoutInput {
-    day: String 
-    workout_type: String
-    username: String
-    exercises: [ExerciseInput]
-  }
-
-  input ExerciseInput {
-    exercise_name: String!
-    category: String
-    description: String
-    sets: Int!
-    reps: Int!
-    weight: Int!
-  }
-
   type Query {
-    users: [User]
-    user(username: String!): User
     workouts(username: String): [Workout]
     me: User
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    updateUserProfile(username: String!, email: String!): User
-    addExercise(exercise_name: String!, category: String, description: String, sets: Int!, reps: Int!, weight: Int!, workout_id: ID!): Exercise
-    removeExercise(exerciseId: ID!): Exercise
-    addWorkout(workout: WorkoutInput): Workout
+    login(email: String!, password: String!): Auth
+    addWorkout(workoutName: String!): Workout
+    addExercise(workoutId: ID!, exerciseName: String!, sets: Int!, reps: Int!, weight: Int!): Workout
     removeWorkout(workoutId: ID!): Workout
+    removeExercise(workoutId: ID!, exerciseId: ID!): Workout
   }
-`
+`;
 
 module.exports = typeDefs;

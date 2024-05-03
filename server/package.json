@@ -1,32 +1,24 @@
 {
   "name": "get-fit",
   "version": "1.0.0",
-  "description": "Fitness tracker application.",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "seed": "node seeders/seed.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon server.js"
+    "start": "node server.js",
+    "watch": "nodemon"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yaserhdev/get-fit.git"
-  },
+  "keywords": [],
   "author": "Tyler Clark, Raja Hussain, Austin Luper, Josh Mayfield",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yaserhdev/get-fit/issues"
-  },
-  "homepage": "https://github.com/yaserhdev/get-fit#readme",
   "dependencies": {
-    "@apollo/server": "^4.10.4",
-    "bcrypt": "^5.1.1",
-    "express": "^4.19.2",
-    "graphql": "^16.8.1",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.3.2"
+    "@apollo/server": "^4.7.1",
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.2",
+    "graphql": "^16.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^7.0.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^2.0.3"
   }
 }

@@ -4,7 +4,6 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import styled from 'styled-components';
 
-// Styled component for the login container
 const LoginContainer = styled.div`
   padding: 20px;
   margin: 20px auto;
@@ -16,32 +15,26 @@ const LoginContainer = styled.div`
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({ email: '', password: '' });
-  // const [validated] = useState(false);
-  // const [showAlert, setShowAlert] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const [login] = useMutation(LOGIN_USER);
-
   const handleLoginChange = (event) => {
     const { name, value } = event.target;
     setLoginData({ ...loginData, [name]: value });
   };
-
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
-    // Handle login logic
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
-
     try {
       const { data } = await login({ variables: { ...loginData } });
       Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
-      // setShowAlert(true);
+      setShowAlert(true);
     }
-
     setLoginData({
       email: '',
       password: '',

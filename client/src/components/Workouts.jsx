@@ -2,34 +2,28 @@ import { useState } from 'react';
 
 const Workouts = () => {
   const [workoutData, setWorkoutData] = useState({
-    day: '', // Day of the week
-    workoutType: '', // Type of workout (e.g., chest, arms, legs, etc.)
-    exercises: [], // Array of exercises performed
-     });
-
+    day: '',
+    workoutName: '',
+    exercises: [],
+  });
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setWorkoutData({ ...workoutData, [name]: value });
   };
-
   const handleAddExercise = () => {
-    // Add a new exercise to the list
     setWorkoutData({
       ...workoutData,
       exercises: [...workoutData.exercises, { name: '', reps: '', weight: '', sets: '' }],
     });
   };
-
   const handleExerciseChange = (index, e) => {
     const { name, value } = e.target;
     const updatedExercises = [...workoutData.exercises];
     updatedExercises[index][name] = value;
     setWorkoutData({ ...workoutData, exercises: updatedExercises });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle submission of workout data
     console.log(workoutData);
   };
 

@@ -2,134 +2,133 @@
 
 /* Global styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Header styles */
-  .header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  .header h1 {
-    margin: 0;
-  }
-  
-  .header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .header nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  .header nav ul li:last-child {
-    margin-right: 0;
-  }
-  
-  .header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .header nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Profile page styles */
-  .profile {
-    padding: 20px;
-  }
-  
-  .profile h1 {
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .profile h2 {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .profile ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .profile ul li {
-    margin-bottom: 20px;
-  }
-  
-  .profile ul li p {
-    margin: 0;
-  }
-  
-  /* Home page styles */
-  .home {
-    padding: 20px;
-  }
-  
-  .home h1 {
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .home p {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .home button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .home button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Error page styles */
-  .error {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .error h1 {
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #dc3545;
-  }
-  
-  .error p {
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .error i {
-    font-style: italic;
-    color: #dc3545;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.header nav ul li:last-child {
+  margin-right: 0;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Profile page styles */
+.profile {
+  padding: 20px;
+}
+
+.profile h1 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.profile h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.profile ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile ul li {
+  margin-bottom: 20px;
+}
+
+.profile ul li p {
+  margin: 0;
+}
+
+/* Home page styles */
+.home {
+  padding: 20px;
+}
+
+.home h1 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.home p {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.home button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.home button:hover {
+  background-color: #0056b3;
+}
+
+/* Error page styles */
+.error {
+  padding: 20px;
+  text-align: center;
+}
+
+.error h1 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #dc3545;
+}
+
+.error p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.error i {
+  font-style: italic;
+  color: #dc3545;
+}

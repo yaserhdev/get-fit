@@ -4,7 +4,6 @@ import { ADD_USER } from '../utils/mutations';
 import styled from 'styled-components';
 import Auth from '../utils/auth';
 
-// Styled component for the sign-up container
 const SignUpContainer = styled.div`
   padding: 20px;
   margin: 20px auto;
@@ -16,18 +15,13 @@ const SignUpContainer = styled.div`
 
 const SignUpPage = () => {
   const [signUpData, setSignUpData] = useState({ username: '', email: '', password: '' });
-  // const [validated] = useState(false);
-  // const [showAlert, setShowAlert] = useState(false);
   const [addUser] = useMutation(ADD_USER);
-
   const handleSignUpChange = (event) => {
     const { name, value } = event.target;
     setSignUpData({ ...signUpData, [name]: value });
   };
-
   const handleSignUpSubmit = async (event) => {
     event.preventDefault();
-    // Handle sign up logic
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -39,7 +33,6 @@ const SignUpPage = () => {
       Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
-      // setShowAlert(true);
     }
     setSignUpData({
       username: '',
@@ -51,7 +44,6 @@ const SignUpPage = () => {
   return (
     <SignUpContainer>
       <h2>Sign Up</h2>
-      {/* <form validated={validated} onSubmit={handleSignUpSubmit}> */}
       <form onSubmit={handleSignUpSubmit}>
         <input
           type="text"
