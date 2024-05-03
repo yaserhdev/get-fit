@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import Workouts from '../components/Workouts.jsx';
 import Navbar from '../components/Navbar.jsx'; // Import the Navbar component
+import styled from 'styled-components'; // Import styled-components library
+
+const ProfileContainer = styled.div`
+  margin-top: 100px; /* Add top margin to start content below the Navbar */
+`;
 
 const Profile = () => { 
   const [pastWorkouts, setPastWorkouts] = useState([]);
@@ -19,9 +24,9 @@ const Profile = () => {
   }, []);
 
   return (
-    <div>
+    <ProfileContainer>
       <Navbar /> {/* Include the Navbar component */}
-      <h1>Profile Page</h1>
+      <h1>Your Profile</h1>
       <h2>Past Workouts</h2>
       <ul>
         {pastWorkouts.map((workout) => (
@@ -41,7 +46,7 @@ const Profile = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </ProfileContainer>
   );
 };
 
