@@ -1,16 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components'; // Import styled-components library
+import styled from 'styled-components';
+import Navbar from '../components/Navbar';
 
-// Import Navbar component
-import Navbar from '../components/Navbar'; 
-
-// Uncommented imports
-// import { useState, useEffect } from 'react';
-// import { useMutation, useQuery } from 'react';
-// import Auth from '../utils/auth';
-
-// Styled Navbar component with the same styling as Banner
 const StyledDashboard = styled.div`
   /* Add any styling specific to the Dashboard page here */
 `;
@@ -18,10 +10,10 @@ const StyledDashboard = styled.div`
 const Dashboard = () => {
   return (
     <StyledDashboard>
-      <Navbar /> {/* Include the Navbar component */}
+      <Navbar />
       <div>Dashboard</div>
     </StyledDashboard>
   );
-}
+};
 
 export default Dashboard;

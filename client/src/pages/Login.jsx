@@ -3,22 +3,17 @@ import styled, { keyframes } from 'styled-components';
 import LoginContainer from '../components/LoginContainer.jsx';
 import SignUpContainer from '../components/SignUpContainer.jsx';
 
-// Define colors
 const colors = {
   darkGreen: '#010400',
   darkGray: '#30332E',
   offWhite: '#FFFBFC',
   lightCyan: '#62BBC1',
-  lightBlue: '#25CFDC', // New color
+  lightBlue: '#25CFDC',
 };
-
-// Keyframes for the modern text animation
 const fadeIn = keyframes`
   from { opacity: 0; }
   to { opacity: 1; }
 `;
-
-// Styled components
 const Banner = styled.div`
   padding: 40px;
   font-size: 36px;
@@ -31,12 +26,10 @@ const Banner = styled.div`
   color: ${colors.darkGreen}; /* Dark green for text color */
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 `;
-
 const StyledParagraph = styled.p`
   font-size: 18px;
   text-align: center;
 `;
-
 const StyledButton = styled.button`
   padding: 10px 20px;
   font-size: 16px;
@@ -46,8 +39,6 @@ const StyledButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
-
-// Modify the "GET-FIT" banner to have an athletic look
 const AthleticBanner = styled(Banner)`
   font-family: 'Arial', sans-serif; /* Change font family */
   background-color: ${colors.darkGreen}; /* Dark green background */
@@ -55,16 +46,12 @@ const AthleticBanner = styled(Banner)`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for depth */
   border-bottom: none; /* Remove bottom border */
 `;
-
-// New styled component for the animated background section
 const AnimatedBackground = styled.div`
   position: relative;
   height: 400px; /* Increase height to reach the footer */
   background: linear-gradient(135deg, ${colors.lightBlue}, ${colors.lightCyan}); /* Gradient background */
   overflow: hidden;
 `;
-
-// New styled component for the content within the animated background section
 const ContentWrapper = styled.div`
   position: absolute;
   top: 40%; /* Adjust vertical position */
@@ -77,29 +64,23 @@ const ContentWrapper = styled.div`
 
 const Home = () => {
   const [isLogin, setIsLogin] = useState(true);
-
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
-
-  // UseEffect hook to trigger animation only once when the component mounts
   useEffect(() => {
     const timer = setTimeout(() => {
-    }, 1500); // timeout value to match the animation duration
+    }, 1500); 
     return () => clearTimeout(timer);
-  }, []); // Empty dependency array ensures useEffect runs only once on component mount
+  }, []);
 
   return (
     <div>
-      {/* Use the AthleticBanner component instead of Banner */}
       <AthleticBanner>GET-FIT</AthleticBanner>
       {isLogin ? <LoginContainer /> : <SignUpContainer />}
       <StyledParagraph>
         {isLogin ? "Don't have an account? Create one now!" : "Already have an account? Login here!"}{' '}
-        {/* Use the StyledButton component with light blue background */}
         <StyledButton onClick={toggleForm}>{isLogin ? "Sign Up" : "Login"}</StyledButton>
       </StyledParagraph>
-      {/* AnimatedBackground component with content */}
       <AnimatedBackground>
         <ContentWrapper>
           <h2>Welcome to GET-FIT!</h2>

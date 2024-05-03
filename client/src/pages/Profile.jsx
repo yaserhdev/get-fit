@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react';
 import Workouts from '../components/Workouts.jsx';
-import Navbar from '../components/Navbar.jsx'; // Import the Navbar component
-import styled from 'styled-components'; // Import styled-components library
-
+import Navbar from '../components/Navbar.jsx';
+import styled from 'styled-components';
 const ProfileContainer = styled.div`
   margin-top: 100px; /* Add top margin to start content below the Navbar */
 `;
-
-const Profile = () => { 
+const Profile = () => {
   const [pastWorkouts, setPastWorkouts] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -19,13 +16,12 @@ const Profile = () => {
         console.error('Error fetching past workouts:', error);
       }
     };
-
     fetchData();
   }, []);
 
   return (
     <ProfileContainer>
-      <Navbar /> {/* Include the Navbar component */}
+      <Navbar />
       <h1>Your Profile</h1>
       <h2>Past Workouts</h2>
       <ul>

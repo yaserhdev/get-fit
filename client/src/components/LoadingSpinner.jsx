@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './LoadingSpinner.css'; // Import CSS file for styling the spinner
+import './LoadingSpinner.css';
 
 const LoadingSpinner = ({ isLoading }) => {
   return isLoading ? (
@@ -10,7 +10,6 @@ const LoadingSpinner = ({ isLoading }) => {
   ) : null;
 };
 
-// PropTypes validation for isLoading prop
 LoadingSpinner.propTypes = {
   isLoading: PropTypes.bool.isRequired,
 };
