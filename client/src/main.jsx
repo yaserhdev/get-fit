@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Error from './pages/Error.jsx';
-import Home from './pages/Home.jsx';
+import Home from './pages/Login.jsx';
 import Profile from './pages/Profile.jsx';
 import Footer from './components/Footer'; // Import the Footer component
 import Dashboard from './pages/Dashboard.jsx';
