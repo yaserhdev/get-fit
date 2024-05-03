@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import LoginPage from '../components/LoginPage.jsx';
-import SignUpPage from '../components/SignUpPage.jsx';
+import LoginContainer from '../components/LoginContainer.jsx';
+import SignUpContainer from '../components/SignUpContainer.jsx';
 
 // Define colors
 const colors = {
@@ -93,7 +93,7 @@ const Home = () => {
     <div>
       {/* Use the AthleticBanner component instead of Banner */}
       <AthleticBanner>GET-FIT</AthleticBanner>
-      {isLogin ? <LoginPage /> : <SignUpPage />}
+      {isLogin ? <LoginContainer /> : <SignUpContainer />}
       <StyledParagraph>
         {isLogin ? "Don't have an account? Create one now!" : "Already have an account? Login here!"}{' '}
         {/* Use the StyledButton component with light blue background */}
