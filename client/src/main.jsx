@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Error from './pages/Error.jsx';
-import Home from './pages/Login.jsx';
+import Login from './pages/Login.jsx';
 import Profile from './pages/Profile.jsx';
 import Footer from './components/Footer'; // Import the Footer component
 import Dashboard from './pages/Dashboard.jsx';
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Login />,
       },
       {
         path: '/profile',
