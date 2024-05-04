@@ -20,7 +20,7 @@ const typeDefs = `
     exerciseName: String
     sets: Int
     reps: Int
-    weight: Int
+    weight: String
   }
 
   type Auth {
@@ -37,9 +37,11 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addWorkout(workoutName: String!): Workout
-    addExercise(workoutId: ID!, exerciseName: String!, sets: Int!, reps: Int!, weight: Int!): Workout
+    addExercise(workoutId: ID!, exerciseName: String!, sets: Int!, reps: Int!, weight: String!): Workout
     removeWorkout(workoutId: ID!): Workout
     removeExercise(workoutId: ID!, exerciseId: ID!): Workout
+    updateWorkout(workoutId: ID!, workoutName: String!): Workout
+    updateExercise(workoutId: ID!, exerciseId: ID!, exerciseName: String!, sets: Int!, reps: Int!, weight: String!): Workout
   }
 `;
 

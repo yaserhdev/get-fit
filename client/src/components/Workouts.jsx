@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 const Workouts = () => {
   const [workoutData, setWorkoutData] = useState({
-    day: '',
     workoutName: '',
     exercises: [],
   });
@@ -13,7 +12,7 @@ const Workouts = () => {
   const handleAddExercise = () => {
     setWorkoutData({
       ...workoutData,
-      exercises: [...workoutData.exercises, { name: '', reps: '', weight: '', sets: '' }],
+      exercises: [...workoutData.exercises, { workoutName: '', reps: '', weight: '', sets: '' }],
     });
   };
   const handleExerciseChange = (index, e) => {
