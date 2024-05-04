@@ -20,8 +20,12 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        index: true,
+        path: '/login', // Define the login route path
         element: <Login />,
+      },
+      {
+        index: true,
+        element: <Login />, // You may want to render Login component as the default route
       },
       {
         path: '/profile',
