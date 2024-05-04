@@ -62,7 +62,7 @@ const ContentWrapper = styled.div`
   color: ${colors.offWhite};
 `;
 
-const Home = () => {
+const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const toggleForm = () => {
     setIsLogin(!isLogin);
@@ -91,4 +91,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;
