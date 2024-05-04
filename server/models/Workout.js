@@ -40,10 +40,8 @@ const workoutSchema = new Schema({
         maxlength: 4,
       },
       weight: {
-        type: Number,
+        type: String,
         required: true,
-        minlength:1,
-        maxlength: 5,
       },
     },
   ],

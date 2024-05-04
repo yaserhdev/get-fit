@@ -93,6 +93,40 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    updateWorkout: async (parent, { workoutId, workoutName }, context) => {
+      if (context.user) {
+        const updatedWorkout = await Workout.findOneAndUpdate(
+          { _id: workoutId },
+          {
+            $set: {
+              workoutName: workoutName,
+            }
+          },
+          { new: true },
+        );
+        return updatedWorkout;
+      }
+    },
+    updateExercise: async (parent, { workoutId, exerciseId, exerciseName, sets, reps, weight }, context) => {
+      if (context.user) {
+        const updatedExercise = await Workout.findOneAndUpdate(
+          { _id: workoutId },
+          {
+            $set: {
+              exercises: {
+                _id: exerciseId,
+                exerciseName: exerciseName,
+                sets: sets,
+                reps: reps,
+                weight: weight,
+              }
+            }
+          },
+          { new: true },
+        );
+        return updatedExercise;
+      }
+    },
   },
 };
 
