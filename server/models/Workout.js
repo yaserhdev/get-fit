@@ -19,32 +19,37 @@ const workoutSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  exercises: [
-    {
-      exerciseName: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 30,
-      },
-      sets: {
-        type: Number,
-        required: true,
-        minlength:1,
-        maxlength: 3,
-      },
-      reps: {
-        type: Number,
-        required: true,
-        minlength:1,
-        maxlength: 4,
-      },
-      weight: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+  description: {
+    type: String,
+    required: true,
+    trim: true,
+  }
+  // exercises: [
+  //   {
+  //     exerciseName: {
+  //       type: String,
+  //       required: true,
+  //       minlength: 1,
+  //       maxlength: 30,
+  //     },
+  //     sets: {
+  //       type: Number,
+  //       required: true,
+  //       minlength:1,
+  //       maxlength: 3,
+  //     },
+  //     reps: {
+  //       type: Number,
+  //       required: true,
+  //       minlength:1,
+  //       maxlength: 4,
+  //     },
+  //     weight: {
+  //       type: String,
+  //       required: true,
+  //     },
+  //   },
+  // ],
 });
 
 const Workout = model('Workout', workoutSchema);

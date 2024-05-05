@@ -7,14 +7,27 @@ export const QUERY_WORKOUTS = gql`
       workoutName
       workoutAuthor
       createdAt
-      exercises {
-        exerciseName
-        sets
-        reps
-        weight
-      }
+      description
     }
   }
+`;
+
+export const QUERY_USERS = gql`
+  query Users {
+  users {
+    _id
+    email
+    password
+    username
+    workouts {
+      _id
+      createdAt
+      workoutAuthor
+      workoutName
+      description
+    }
+  }
+}
 `;
 
 export const QUERY_ME = gql`
@@ -28,12 +41,7 @@ export const QUERY_ME = gql`
         workoutName
         workoutAuthor
         createdAt
-        exercises {
-          exerciseName
-          sets
-          reps
-          weight
-        }
+        description
       }
     }
   }

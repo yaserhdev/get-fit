@@ -13,6 +13,11 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    users: async (parent, args, context) => {
+      if (context.user) {
+        return User.find().populate('workouts');
+      }
+    },
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
@@ -32,10 +37,11 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addWorkout: async (parent, { workoutName }, context) => {
+    addWorkout: async (parent, { workoutName, description }, context) => {
       if (context.user) {
         const workout = await Workout.create({
           workoutName,
+          description,
           workoutAuthor: context.user.username,
         });
         await User.findOneAndUpdate(
@@ -46,23 +52,23 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    addExercise: async (parent, { workoutId, exerciseName, sets, reps, weight }, context) => {
-      if (context.user) {
-        return Workout.findOneAndUpdate(
-          { _id: workoutId },
-          {
-            $addToSet: {
-              exercises: { exerciseName, sets, reps, weight },
-            },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw AuthenticationError;
-    },
+    // addExercise: async (parent, { workoutId, exerciseName, sets, reps, weight }, context) => {
+    //   if (context.user) {
+    //     return Workout.findOneAndUpdate(
+    //       { _id: workoutId },
+    //       {
+    //         $addToSet: {
+    //           exercises: { exerciseName, sets, reps, weight },
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
+    //   }
+    //   throw AuthenticationError;
+    // },
     removeWorkout: async (parent, { workoutId }, context) => {
       if (context.user) {
         const workout = await Workout.findOneAndDelete({
@@ -77,29 +83,30 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    removeExercise: async (parent, { workoutId, exerciseId }, context) => {
-      if (context.user) {
-        return Workout.findOneAndUpdate(
-          { _id: workoutId },
-          {
-            $pull: {
-              exercises: {
-                _id: exerciseId,
-              },
-            },
-          },
-          { new: true }
-        );
-      }
-      throw AuthenticationError;
-    },
-    updateWorkout: async (parent, { workoutId, workoutName }, context) => {
+    // removeExercise: async (parent, { workoutId, exerciseId }, context) => {
+    //   if (context.user) {
+    //     return Workout.findOneAndUpdate(
+    //       { _id: workoutId },
+    //       {
+    //         $pull: {
+    //           exercises: {
+    //             _id: exerciseId,
+    //           },
+    //         },
+    //       },
+    //       { new: true }
+    //     );
+    //   }
+    //   throw AuthenticationError;
+    // },
+    updateWorkout: async (parent, { workoutId, workoutName, description }, context) => {
       if (context.user) {
         const updatedWorkout = await Workout.findOneAndUpdate(
           { _id: workoutId },
           {
             $set: {
               workoutName: workoutName,
+              description: description,
             }
           },
           { new: true },
@@ -107,26 +114,26 @@ const resolvers = {
         return updatedWorkout;
       }
     },
-    updateExercise: async (parent, { workoutId, exerciseId, exerciseName, sets, reps, weight }, context) => {
-      if (context.user) {
-        const updatedExercise = await Workout.findOneAndUpdate(
-          { _id: workoutId },
-          {
-            $set: {
-              exercises: {
-                _id: exerciseId,
-                exerciseName: exerciseName,
-                sets: sets,
-                reps: reps,
-                weight: weight,
-              }
-            }
-          },
-          { new: true },
-        );
-        return updatedExercise;
-      }
-    },
+    // updateExercise: async (parent, { workoutId, exerciseId, exerciseName, sets, reps, weight }, context) => {
+    //   if (context.user) {
+    //     const updatedExercise = await Workout.findOneAndUpdate(
+    //       { _id: workoutId },
+    //       {
+    //         $set: {
+    //           exercises: {
+    //             exerciseName: exerciseName,
+    //             sets: sets,
+    //             reps: reps,
+    //             weight: weight,
+    //           }
+    //         },
+    //         arrayFilters: [{ _id: exerciseId }],
+    //       },
+    //       { new: true },
+    //     );
+    //     return updatedExercise;
+    //   }
+    // },
   },
 };
 

@@ -31,34 +31,28 @@ export const ADD_WORKOUT = gql`
       workoutName
       workoutAuthor
       createdAt
-      exercises {
-        _id
-        exerciseName
-        sets
-        reps
-        weight
-      }
+      description
     }
   }
 `;
 
-export const ADD_EXERCISE = gql`
-  mutation addExercise($workoutId: ID!, $exerciseName: String!, $sets: Int!, $reps: Int!, $weight: Int!) {
-    addComment(workoutId: $workoutId, exerciseName: $exerciseName, sets: $sets, reps: $reps, weight: $weight) {
-      _id
-      workoutName
-      workoutAuthor
-      createdAt
-      exercises {
-        _id
-        exerciseName
-        sets
-        reps
-        weight
-      }
-    }
-  }
-`;
+// export const ADD_EXERCISE = gql`
+//   mutation addExercise($workoutId: ID!, $exerciseName: String!, $sets: Int!, $reps: Int!, $weight: Int!) {
+//     addComment(workoutId: $workoutId, exerciseName: $exerciseName, sets: $sets, reps: $reps, weight: $weight) {
+//       _id
+//       workoutName
+//       workoutAuthor
+//       createdAt
+//       exercises {
+//         _id
+//         exerciseName
+//         sets
+//         reps
+//         weight
+//       }
+//     }
+//   }
+// `;
 
 export const REMOVE_WORKOUT = gql`
   mutation removeWorkout($workoutId: ID!) {
@@ -67,31 +61,25 @@ export const REMOVE_WORKOUT = gql`
       workoutName
       workoutAuthor
       createdAt
-      exercises {
-        _id
-        exerciseName
-        sets
-        reps
-        weight
-      }
+      description
     }
   }
 `;
 
-export const REMOVE_EXERCISE = gql`
-  mutation removeExercise($workoutId: ID!, $exerciseId: ID!) {
-    removeExercise(workoutId: $workoutId, exerciseId: $exerciseId) {
-      _id
-      workoutName
-      workoutAuthor
-      createdAt
-      exercises {
-        _id
-        exerciseName
-        sets
-        reps
-        weight
-      }
-    }
-  }
-`;
+// export const REMOVE_EXERCISE = gql`
+//   mutation removeExercise($workoutId: ID!, $exerciseId: ID!) {
+//     removeExercise(workoutId: $workoutId, exerciseId: $exerciseId) {
+//       _id
+//       workoutName
+//       workoutAuthor
+//       createdAt
+//       exercises {
+//         _id
+//         exerciseName
+//         sets
+//         reps
+//         weight
+//       }
+//     }
+//   }
+// `;

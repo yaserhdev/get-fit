@@ -12,15 +12,7 @@ const typeDefs = `
     workoutName: String
     workoutAuthor: String
     createdAt: String
-    exercises: [Exercise]!
-  }
-
-  type Exercise {
-    _id: ID
-    exerciseName: String
-    sets: Int
-    reps: Int
-    weight: String
+    description: String
   }
 
   type Auth {
@@ -29,19 +21,17 @@ const typeDefs = `
   }
 
   type Query {
-    workouts(username: String): [Workout]
+    workouts: [Workout]
     me: User
+    users: [User]
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addWorkout(workoutName: String!): Workout
-    addExercise(workoutId: ID!, exerciseName: String!, sets: Int!, reps: Int!, weight: String!): Workout
+    addWorkout(workoutName: String!, description: String!): Workout
     removeWorkout(workoutId: ID!): Workout
-    removeExercise(workoutId: ID!, exerciseId: ID!): Workout
-    updateWorkout(workoutId: ID!, workoutName: String!): Workout
-    updateExercise(workoutId: ID!, exerciseId: ID!, exerciseName: String!, sets: Int!, reps: Int!, weight: String!): Workout
+    updateWorkout(workoutId: ID!, workoutName: String!, description: String!): Workout
   }
 `;
 
