@@ -9,7 +9,6 @@ Fitness tracker app for final group project.
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-- [Link to Video Walkthrough](#link-to-video-walkthrough)
 - [Technologies Used](#technologies-used)
 - [Credits](#credits)
 - [Contact](#contact)
@@ -49,7 +48,7 @@ This challenge is provided under the MIT License. See the [LICENSE](LICENSE) fil
 
 GitHub repo: https://github.com/yaserhdev/get-fit
 
-Deployed Render application: 
+Deployed Render application: https://get-fit-u7eu.onrender.com/
 
 ## Technologies Used
 
@@ -58,6 +57,8 @@ MongoDB
 Mongoose ODM
 
 Numerous NPM packages
+
+Node
 
 JavaScript
 
@@ -68,6 +69,8 @@ Insomnia
 Express.js
 
 React
+
+& More
 
 ## Credits
 Development was assisted by the following resources:
@@ -82,4 +85,12 @@ Development was assisted by the following resources:
 
 
 ## Contact
-To contact the owner of this repo, OrganicClick, please reach out via OrganicClick@exampleemail.com
+To contact the creaters of this application, email:
+
+1. Raja Hussain at yaserh.dev@gmail.com
+
+2. Josh Mayfield at josh.mayfield45@gmail.com
+
+3. Austin Luper at austin.luper@gmail.com.
+
+4. Tyler Clark at tylerc111@gmail.com
