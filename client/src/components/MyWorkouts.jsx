@@ -4,6 +4,19 @@ import { REMOVE_WORKOUT, UPDATE_WORKOUT } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 import WorkoutForm from './WorkoutForm';
+import styled from 'styled-components';
+
+const StyledListContainer = styled.ul`
+  position: relative;
+  border-radius: 15px;
+  list-style-position: inside;
+  border: 1px solid black;
+  padding: 10px;
+`;
+
+const StyledListItem = styled.li`
+  list-style: none;
+`;
 
 const MyWorkouts = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -52,22 +65,22 @@ const MyWorkouts = () => {
       <h1>Your Profile</h1>
       <h2>Workouts</h2>
       {Auth.loggedIn() ? (
-      <ul>
+      <StyledListContainer>
         {!loading ? userData.workouts.map((workout, id) => (
-          <li key={id}>
+          <StyledListItem key={id}>
             <p>Name: {workout.workoutName}</p>
             <p>Created By: {workout.workoutAuthor}</p>
             <p>Description: {workout.description}</p>
             <p>Created At: {workout.createdAt}</p>
-            <button className="edit-workout-btn" onClick={() => handleUpdateWorkout}>
+            <button className="edit-workout-btn" onClick={() => handleUpdateWorkout(workout._id)}>
               Edit this workout!
             </button>
             <button className="delete-workout-btn" onClick={() => handleDeleteWorkout(workout._id)}>
               Delete this workout!
             </button>
-          </li>
+          </StyledListItem>
         )):''}
-      </ul>
+      </StyledListContainer>
       ) : (
         <p>
             To see your workouts, please login or signup{' '}
