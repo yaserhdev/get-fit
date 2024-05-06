@@ -2,6 +2,19 @@ import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_WORKOUT } from '../utils/mutations';
 import Auth from '../utils/auth';
+import styled from 'styled-components';
+
+const StyledListContainer = styled.ul`
+  position: relative;
+  border-radius: 15px;
+  list-style-position: inside;
+  border: 1px solid black;
+  padding: 10px;
+`;
+
+const StyledListItem = styled.li`
+  list-style: none;
+`;
 
 const MyWorkouts = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -32,9 +45,9 @@ const MyWorkouts = () => {
     <div>
       <h1>Your Profile</h1>
       <h2>Workouts</h2>
-      <ul>
+      <StyledListContainer>
         {!loading ? userData.workouts.map((workout, id) => (
-          <li key={id}>
+          <StyledListItem key={id}>
             <p>Name: {workout.workoutName}</p>
             <p>Created By: {workout.workoutAuthor}</p>
             <p>Description: {workout.description}</p>
@@ -42,9 +55,9 @@ const MyWorkouts = () => {
             <button className="delete-workout-btn" onClick={() => handleDeleteWorkout(workout._id)}>
               Delete this workout!
             </button>
-          </li>
+          </StyledListItem>
         )):''}
-      </ul>
+      </StyledListContainer>
     </div>
   );
 
