@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import AuthService from '../utils/auth'; // Import AuthService for logout functionality
+import Auth from '../utils/auth';
 
 const colors = {
   darkGreen: '#010400',
@@ -60,19 +61,41 @@ const Navbar = () => {
     // Redirect the user back to the login screen
     window.location.href = '/login';
   };
+  const handleLogin = () => {
+    // Call the logout method from AuthService
+    AuthService.login();
+    // Redirect the user back to the login screen
+    window.location.href = '/login';
+  };
 
   return (
-    <StyledNavbar>
-      <StyledUl>
-        <StyledLi>
-          <StyledLink to="/dashboard">Dashboard</StyledLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledLink to="/profile">Profile</StyledLink>
-        </StyledLi>
-      </StyledUl>
-      <StyledButton onClick={handleLogout}>Logout</StyledButton> {/* Styled logout button */}
-    </StyledNavbar>
+    <div>
+      {Auth.loggedIn() ? (
+        <StyledNavbar>
+          <StyledUl>
+            <StyledLi>
+              <StyledLink to="/dashboard">Dashboard</StyledLink>
+            </StyledLi>
+            <StyledLi>
+              <StyledLink to="/profile">Profile</StyledLink>
+            </StyledLi>
+          </StyledUl>
+          <StyledButton onClick={handleLogout}>Logout</StyledButton> {/* Styled logout button */}
+        </StyledNavbar>
+      ) : (
+        <StyledNavbar>
+          <StyledUl>
+            <StyledLi>
+              <StyledLink to="/dashboard">Dashboard</StyledLink>
+            </StyledLi>
+            <StyledLi>
+              <StyledLink to="/profile">Profile</StyledLink>
+            </StyledLi>
+          </StyledUl>
+          <StyledButton onClick={handleLogin}>Login</StyledButton> {/* Styled logout button */}
+        </StyledNavbar>
+      )}
+    </div>
   );
 };
 

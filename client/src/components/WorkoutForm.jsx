@@ -85,7 +85,7 @@ const WorkoutForm = () => {
                 </>
             ) : (
                 <p>
-                    To see your workouts, please login or signup{' '}
+                    To create a workout, please login or signup{' '}
                     <Link to="/login">here</Link>.
                 </p>
             )}

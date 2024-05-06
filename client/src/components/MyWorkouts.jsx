@@ -2,6 +2,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import { REMOVE_WORKOUT } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
 
 const MyWorkouts = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -32,6 +33,7 @@ const MyWorkouts = () => {
     <div>
       <h1>Your Profile</h1>
       <h2>Workouts</h2>
+      {Auth.loggedIn() ? (
       <ul>
         {!loading ? userData.workouts.map((workout, id) => (
           <li key={id}>
@@ -45,7 +47,14 @@ const MyWorkouts = () => {
           </li>
         )):''}
       </ul>
+      ) : (
+        <p>
+            To see your workouts, please login or signup{' '}
+            <Link to="/login">here</Link>.
+        </p>
+      )}
     </div>
+      
   );
 
 
