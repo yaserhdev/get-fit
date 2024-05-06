@@ -26,8 +26,11 @@ const WorkoutForm = () => {
         try {
             const { loading, data } = await addWorkout({
                 variables: {
-                    workoutFormData,
-                    workoutAuthor: Auth.getProfile().data.username,
+                  //  workoutName: workoutFormData.workoutName,
+                 //   description: workoutFormData.description,
+
+                    ...workoutFormData,  // we can SPREAD the FORM DATA OBJECT
+                   // workoutAuthor: Auth.getProfile().data.username,
                 }
             });
             setWorkoutFormData('');
