@@ -38,6 +38,8 @@ const resolvers = {
       return { token, user };
     },
     addWorkout: async (parent, { workoutName, description }, context) => {
+      console.log("Context: ", context.user)
+
       if (context.user) {
         const workout = await Workout.create({
           workoutName,

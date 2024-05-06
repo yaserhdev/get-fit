@@ -25,8 +25,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_WORKOUT = gql`
-  mutation addWorkout($workoutName: String!) {
-    addWorkout(workoutName: $workoutName) {
+  mutation addWorkout($workoutName: String!, $description: String!) {
+    addWorkout(workoutName: $workoutName, description: $description) {
       _id
       workoutName
       workoutAuthor
