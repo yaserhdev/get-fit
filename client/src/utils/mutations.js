@@ -36,6 +36,18 @@ export const ADD_WORKOUT = gql`
   }
 `;
 
+export const UPDATE_WORKOUT = gql`
+  mutation updateWorkout($workoutId: ID!, $workoutName: String!, $description: String!) {
+    updateWorkout(workoutId: $workoutId, workoutName: $workoutName, description: $description) {
+      _id
+      workoutName
+      workoutAuthor
+      createdAt
+      description
+    }
+  }
+`;
+
 // export const ADD_EXERCISE = gql`
 //   mutation addExercise($workoutId: ID!, $exerciseName: String!, $sets: Int!, $reps: Int!, $weight: Int!) {
 //     addComment(workoutId: $workoutId, exerciseName: $exerciseName, sets: $sets, reps: $reps, weight: $weight) {
