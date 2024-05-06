@@ -3,6 +3,7 @@ import { QUERY_ME } from '../utils/queries';
 import { REMOVE_WORKOUT, UPDATE_WORKOUT } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
+import WorkoutForm from './WorkoutForm';
 
 const MyWorkouts = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -40,6 +41,8 @@ const MyWorkouts = () => {
     }
   }
 
+  
+
   if (loading) {
     return <h2>LOADING...</h2>;
   }
@@ -56,7 +59,7 @@ const MyWorkouts = () => {
             <p>Created By: {workout.workoutAuthor}</p>
             <p>Description: {workout.description}</p>
             <p>Created At: {workout.createdAt}</p>
-            <button className="edit-workout-btn" onClick={() => handleUpdateWorkout(workout._id)}>
+            <button className="edit-workout-btn" onClick={() => handleUpdateWorkout}>
               Edit this workout!
             </button>
             <button className="delete-workout-btn" onClick={() => handleDeleteWorkout(workout._id)}>
@@ -71,12 +74,8 @@ const MyWorkouts = () => {
             <Link to="/login">here</Link>.
         </p>
       )}
-    </div>
-      
+    </div> 
   );
-
-
-
 };
 
 export default MyWorkouts;
