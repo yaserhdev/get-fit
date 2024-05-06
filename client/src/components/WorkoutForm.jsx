@@ -34,6 +34,7 @@ const WorkoutForm = () => {
                 }
             });
             setWorkoutFormData('');
+            window.location.reload();
         } catch (err) {
             console.error(err);
         }
